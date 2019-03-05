@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cities>
+  <city>
+    <id type ="Guid">ef9190bc-022c-402e-bcf5-c577aa4ae530</id>
+    <name>Almaty</name>
+    <countryName>Kazakhstan</countryName>
+    <latitude>57,1</latitude>
+    <longitude>12,8</longitude>
+  </city>
+  <city>
+    <id type ="int">2</id>
+    <name>Astana</name>
+    <countryName>Kazakhstan</countryName>
+    <latitude>12</latitude>
+    <longitude>15</longitude>
+  </city>
+  <city>
+    <id type ="Guid">ce9ab4c8-2131-489b-b184-358d52922412</id>
+    <name>Aktau</name>
+    <countryName>Kazakhstan</countryName>
+    <latitude>80,5</latitude>    
+    <longitude>12,6</longitude>
+  </city>
+</cities>
