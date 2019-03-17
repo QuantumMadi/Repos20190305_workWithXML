@@ -14,14 +14,6 @@ namespace HabrHabr
         public string Link { get; set; }
         public string Description { get; set; }
         public string PubDate { get; set; }
-        //public Item(string title, string link, string description, DateTime pubDate)
-        //{
-        //    Title = title;
-        //    Link = link;
-        //    Description = description;
-        //    PubDate = pubDate;
-        //}
-
-        public Item() { }
+   
     }
 }

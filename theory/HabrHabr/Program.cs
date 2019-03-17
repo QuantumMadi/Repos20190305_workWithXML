@@ -17,12 +17,11 @@ namespace HabrHabr
 
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Item>));
 
-            var xRoot = DownLoadData();
+            var xRoot = DownLoadData("https://habrahabr.ru/rss/interesting/");
           
             foreach(XmlNode xnode in xRoot)
             {
                
-
                 foreach (XmlNode habrItems in xnode.ChildNodes) {
                     Item item = new Item();
                     if (habrItems.Name == "item")
@@ -33,20 +32,18 @@ namespace HabrHabr
                             if (child.Name == "link") item.Link = child.InnerText;
                             if (child.Name == "description") item.Description = child.InnerText;
                             if (child.Name == "pubDate") item.PubDate = child.InnerText;
-                        }                     
-                    }
-                    items.Add(item);
-                }
-              
-                
+                        }
+                        items.Add(item);
+                    }                 
+                }                           
             }
             Console.ReadLine();
         }
 
-        public static XmlElement DownLoadData()
+        public static XmlElement DownLoadData(string link)
         {           
             WebClient webClient = new WebClient();
-            var xmlFile = Encoding.UTF8.GetString(webClient.DownloadData("https://habrahabr.ru/rss/interesting/"));
+            var xmlFile = Encoding.UTF8.GetString(webClient.DownloadData(link));
             var xmlDoc = new XmlDocument();
             xmlDoc.LoadXml(xmlFile);
             XmlElement xRoot = xmlDoc.DocumentElement;
